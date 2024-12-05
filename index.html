@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Número</title>
+</head>
+<body>
+    <h1 id="numero">Cargando...</h1>
+
+    <script>
+        // Obtener el parámetro "numero" de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const numero = urlParams.get('numero');  // Obtener el valor de "numero"
+        
+        // Mostrar el número en la página
+        if (numero) {
+            document.getElementById('numero').textContent = `El número es: ${numero}`;
+        }
+    </script>
+</body>
+</html>
