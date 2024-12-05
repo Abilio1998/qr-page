@@ -3,43 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código QR</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-        }
-        img {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 50px;
-            color: #333;
-        }
-    </style>
+    <title>Mostrar Número</title>
 </head>
 <body>
-    <div class="container">
-        <img src="logotipo.png" alt="Logotipo" />
-        <h1 id="numero">Número</h1>
-    </div>
+    <h1 id="numero">Cargando...</h1>
 
     <script>
-        // Obtener el número que debe mostrarse desde la URL
+        // Obtener el parámetro "numero" de la URL
         const urlParams = new URLSearchParams(window.location.search);
-        const numero = urlParams.get('numero');
-
-        // Mostrar el número en el título
+        const numero = urlParams.get('numero');  // Obtener el valor de "numero"
+        
+        // Mostrar el número en la página
         if (numero) {
-            document.getElementById("numero").textContent = "Número: " + numero;
+            document.getElementById('numero').textContent = `El número es: ${numero}`;
         }
     </script>
 </body>
