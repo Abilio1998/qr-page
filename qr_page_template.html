@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código QR</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logotipo.png" alt="Logotipo" />
+        <h1 id="numero">Número</h1>
+    </div>
+
+    <script>
+        // Obtener el número que debe mostrarse desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const numero = urlParams.get('numero');
+
+        // Mostrar el número en el título
+        if (numero) {
+            document.getElementById("numero").textContent = "Número: " + numero;
+        }
+    </script>
+</body>
+</html>
